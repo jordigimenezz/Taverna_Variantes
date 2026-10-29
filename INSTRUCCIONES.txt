@@ -1,0 +1,22 @@
+TABERNA VARIANTES
+Versión actualizada: 28 de octubre de 2026
+
+PARA PUBLICAR
+Sube el contenido de la carpeta dist a tu alojamiento web.
+La página principal es dist/index.html.
+Incluye también todas las carpetas y archivos de dist.
+
+PARA VERLA EN TU ORDENADOR
+Con Node.js instalado:
+1. Abre una terminal en la carpeta del proyecto.
+2. Ejecuta: node preview.mjs
+3. Abre: http://127.0.0.1:4173
+4. Detén la vista previa con Ctrl+C.
+
+PARA EDITAR
+Se incluyen el código fuente, los archivos de diseño, las dependencias
+y todos los recursos utilizados. Consulta README.md.
+
+PENDIENTE DE CONFIGURAR
+Carta definitiva, dirección, horarios y sistema de reservas.
+La carta actual es orientativa y las reservas online no están conectadas.

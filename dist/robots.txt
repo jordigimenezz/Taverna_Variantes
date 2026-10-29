@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taberna-variantes.zany-wren-1816.chatgpt.site/sitemap.xml
