@@ -3,15 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node build.mjs"
-  },
-  "dependencies": {
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "motion": "12.23.24",
-    "@phosphor-icons/react": "2.1.10"
+    "build": "node build.mjs",
+    "test": "node --test tests/preferences.test.mjs"
   },
   "devDependencies": {
-    "esbuild": "0.25.11"
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "@phosphor-icons/react": "2.1.10"
   }
 }

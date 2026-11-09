@@ -1,20 +1,26 @@
 # Sistema visual de Taberna Variantes
 
-Identidad editorial de restauración basada en el logotipo original y el rojo de marca. La portada da protagonismo al vídeo y a la tipografía. Las secciones alternan fotografía y texto con una jerarquía consistente.
+Página de restaurante para público local. Ánimo: taberna, cálido, sin prisa, editorial. Regla principal: una idea por sección, con un eyebrow, un titular, un texto y como máximo una acción.
+
+## Estructura
+
+Portada con imagen o vídeo y titular. La taberna. La cocina. Momentos. Instagram. Cierre. No se añaden franjas de eslóganes, pies en mayúsculas ni acciones repetidas.
+
+## Color
+
+Papel #f3efe4, tinta #332b25 y rojo de marca #a81009. El tema claro es el predeterminado. En oscuro el rojo de texto pasa a #f29285 y los fondos de botón mantienen el rojo de marca. Los colores se definen como variables en dist/style.css.
 
 ## Tipografías
 
-Cormorant Garamond para titulares. DM Sans para texto de lectura. Barlow Condensed para navegación y etiquetas. Las fuentes se alojan localmente y se suministran sus licencias.
+Cormorant Garamond para titulares. DM Sans para texto de lectura, a 17 px. Barlow Condensed en mayúsculas para eyebrows y botones. Fuentes alojadas localmente.
 
 ## Componentes
 
-Esquinas rectas, separadores discretos e iconos de la familia Phosphor. Los colores, espacios y tipografías se definen mediante variables en dist/style.css.
+Esquinas rectas, separadores finos e iconos Phosphor. Botón relleno para la acción principal, enlace subrayado rojo para la secundaria. Todos los controles tienen estados hover, focus visible y active, y un área mínima de 44 px.
 
 ## Interacción
 
-La carta y la información de visitas utilizan ventanas nativas con navegación por teclado, cierre con Escape y retorno del foco al control de origen. El recorrido por los momentos de la mesa usa React y Motion.
-
-El vídeo se reproduce sin sonido y en línea, permite pausa manual y se detiene fuera de pantalla. Se respetan las preferencias de movimiento reducido y ahorro de datos.
+La carta usa una ventana nativa con pestañas, cierre con Escape y retorno del foco. Los momentos son pestañas accesibles con teclado; sin JavaScript se muestran los tres. El vídeo solo se descarga en pantallas de 700 px o más, sin ahorro de datos ni movimiento reducido. En móvil se muestra la fotografía.
 
 ## Contenido
 

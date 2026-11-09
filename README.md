@@ -1,16 +1,17 @@
 # Taberna Variantes
 
-Web de restauración con vídeo de portada, carta por categorías, recorrido interactivo por los momentos de la mesa y temas claro y oscuro.
+Web de restauración con vídeo de portada, carta por categorías, pestañas con los momentos de la mesa y temas claro y oscuro. Sin dependencias en el navegador.
 
 ## Archivos
 
 - dist/: versión lista para subir a un alojamiento estático.
-- src/experience.jsx: recorrido interactivo desarrollado con React y Motion.
-- dist/app.js: navegación, carta y ventanas de información.
-- dist/hero-video.js: reproducción, pausa y preferencias del vídeo.
+- src/instagram-posts.json: publicaciones mostradas en la sección de Instagram.
+- dist/app.js: navegación, carta, pestañas de momentos y ventanas.
+- dist/hero-video.js: carga diferida del vídeo, solo en pantallas anchas.
 - dist/style.css: estilos y adaptación a móvil, tableta y escritorio.
 - dist/assets/: vídeo, fotografías, logotipo, fuentes e iconos, con sus licencias.
-- build.mjs: compilación del componente interactivo y de los iconos.
+- build.mjs: genera los iconos y ejecuta prepare-pages.mjs.
+- prepare-pages.mjs: genera carta, páginas legales, metadatos, pie legal y sección de Instagram.
 - preview.mjs: servidor de vista previa sin dependencias adicionales.
 
 ## Vista previa
@@ -30,7 +31,7 @@ Subir el CONTENIDO de dist/ al directorio público del alojamiento. El sitio no 
     npm ci
     npm run build
 
-Reconstruir después de modificar src/experience.jsx o build.mjs. Los cambios en HTML, CSS y los demás scripts de dist/ se aplican directamente.
+Reconstruir después de modificar site-config.json, src/instagram-posts.json, la carta en dist/app.js o los generadores. Los cambios en CSS y scripts de dist/ se aplican directamente. Pruebas: npm test.
 
 ## Contenido pendiente
 
@@ -52,14 +53,14 @@ Se conservan los avisos y licencias de las dependencias en los archivos correspo
 
 El titular, NIF/CIF, dirección, ciudad y correo se configuran en site-config.json. Actualmente figuran como X por indicación del propietario. Cambiar también origin al usar un dominio propio. Ejecutar npm run build para actualizar políticas, carta, sitemap y metadatos. Las políticas deben verificarse y completarse antes de abrir al público.
 
-El almacenamiento opcional de apariencia solo se permite después de una elección afirmativa. Las decisiones se pueden cambiar desde el pie de página. No se han instalado analítica ni publicidad. La privacidad no se acepta como autorización genérica de tratamientos adicionales.
+El sitio no instala analítica, publicidad ni contenido de terceros, por lo que no muestra aviso de cookies. El tema claro es el predeterminado. El tema oscuro se guarda en el navegador solo cuando el visitante lo elige desde el pie de página y se borra al volver al claro. Este criterio debe validarlo el titular; ver NOTAS-PRIVACIDAD.md.
 
-ESTUDIO-SEO.md contiene la auditoría y el plan de acción. NOTAS-PRIVACIDAD.md documenta el inventario y los datos pendientes. La audiencia privada del alojamiento se conserva y bloquea el rastreo del buscador. Las páginas legales con datos pendientes incluyen noindex.
-
-Para verificar las preferencias: node --test tests/preferences.test.mjs
+ESTUDIO-SEO.md contiene la auditoría y el plan de acción. Las páginas legales con datos pendientes incluyen noindex.
 
 ## Instagram
 
-La sección #instagram muestra una selección fija de cuatro publicaciones reales de https://www.instagram.com/tavernavariantes/, con sus miniaturas locales y enlaces originales. Las publicaciones se configuran en src/instagram-posts.json. La galería no se actualiza automáticamente ni utiliza credenciales de la cuenta.
+La sección #instagram muestra cuatro publicaciones reales de https://www.instagram.com/tavernavariantes/, con miniaturas locales que enlazan a la publicación original en una pestaña nueva. Se configuran en src/instagram-posts.json. No se cargan inserciones ni scripts de Meta.
 
-La vista previa se abre dentro de la web sin conectar con Meta. El visitante puede solicitar la inserción oficial de Instagram, habilitando de forma específica esa finalidad. Las preferencias de apariencia no autorizan por sí solas contenido externo. La inserción puede depender de las opciones del perfil, del navegador y de los requisitos de acceso de Instagram; se conserva la miniatura y el enlace original como alternativa.
+## Imágenes
+
+Las fotografías de ambiente se sirven en WebP a 900 y 1600 px con srcset, con JPEG de respaldo. Al sustituir una fotografía hay que generar las tres versiones con los mismos nombres.

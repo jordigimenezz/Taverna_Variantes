@@ -1,5 +1,5 @@
 TABERNA VARIANTES
-Versión actualizada: 28 de octubre de 2026
+Versión actualizada: 9 de noviembre de 2026
 
 PARA PUBLICAR
 Sube el contenido de la carpeta dist a tu alojamiento web.

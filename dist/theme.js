@@ -1,26 +1,20 @@
-// Local preferences: no optional persistence until the visitor chooses it.
+// Light theme by default. The dark theme is stored only when the visitor chooses it (interface preference, no banner).
 (() => {
- const key = 'variantes-consent-v1';
- const duration = 180 * 24 * 60 * 60 * 1000;
- let consent = null;
- try {
-  const stored = JSON.parse(localStorage.getItem(key));
-  if (stored?.version === 1 && typeof stored.preferences === 'boolean' && Number.isFinite(stored.expiresAt) && stored.expiresAt > Date.now()) consent = stored;
-  else localStorage.removeItem(key);
-  if (!consent?.preferences) localStorage.removeItem('variantes-theme');
- } catch {}
+ const key = 'variantes-theme';
+ let saved = null;
+ try {saved = localStorage.getItem(key);} catch {}
+ document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
+ document.documentElement.classList.remove('no-js');
  window.SitePreferences = {
-  get consent() {return consent;},
-  rememberTheme(theme) {try {if (consent?.preferences) localStorage.setItem('variantes-theme', theme);} catch {}},
-  choose(preferences,socialMedia=false) {
-   consent = {version:1,necessary:true,preferences:Boolean(preferences),socialMedia:Boolean(socialMedia),updatedAt:Date.now(),expiresAt:Date.now()+duration};
-   let persisted = false;
-   try {localStorage.setItem(key,JSON.stringify(consent));persisted=true;if (preferences) localStorage.setItem('variantes-theme',document.documentElement.dataset.theme);else localStorage.removeItem('variantes-theme');} catch {}
-   window.dispatchEvent(new CustomEvent('variantes:consent',{detail:consent}));
-   return persisted;
+  get theme() {return document.documentElement.dataset.theme;},
+  setTheme(theme) {
+   theme = theme === 'dark' ? 'dark' : 'light';
+   document.documentElement.dataset.theme = theme;
+   try {
+    if (theme === 'dark') localStorage.setItem(key, 'dark');
+    else localStorage.removeItem(key);
+    return true;
+   } catch {return false;}
   }
  };
- let saved;
- try {if (consent?.preferences) saved = localStorage.getItem('variantes-theme');} catch {}
- document.documentElement.dataset.theme = saved === 'light' || saved === 'dark' ? saved : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 })();
