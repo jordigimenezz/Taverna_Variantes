@@ -1,12 +1,12 @@
 # Taberna Variantes
 
-Web de restauración con vídeo de portada, carta por categorías, pestañas con los momentos de la mesa y temas claro y oscuro. Sin dependencias en el navegador.
+Web de restauración con vídeo de portada, carta por categorías, secciones breves y temas claro y oscuro. Sin dependencias en el navegador.
 
 ## Archivos
 
 - dist/: versión lista para subir a un alojamiento estático.
 - src/instagram-posts.json: publicaciones mostradas en la sección de Instagram.
-- dist/app.js: navegación, carta, pestañas de momentos y ventanas.
+- dist/app.js: navegación, carta y ventanas.
 - dist/hero-video.js: carga diferida del vídeo, solo en pantallas anchas.
 - dist/style.css: estilos y adaptación a móvil, tableta y escritorio.
 - dist/assets/: vídeo, fotografías, logotipo, fuentes e iconos, con sus licencias.

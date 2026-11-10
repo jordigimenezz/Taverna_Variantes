@@ -73,7 +73,7 @@ document.querySelectorAll('dialog').forEach(dialog => {
  });
 });
 
-/* Pestañas accesibles (carta y momentos) */
+/* Pestañas accesibles de la carta */
 function tablist(tabs, select) {
  tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => select(index));
@@ -92,23 +92,6 @@ function tablist(tabs, select) {
 }
 const menuTabs = [...document.querySelectorAll('[data-category]')];
 tablist(menuTabs, index => showMenu(menuTabs[index].dataset.category));
-
-const momentTabs = [...document.querySelectorAll('.moment-tabs [role=tab]')];
-const momentPanels = [...document.querySelectorAll('.moment')];
-tablist(momentTabs, index => {
- momentTabs.forEach((tab, i) => {
-  tab.setAttribute('aria-selected', String(i === index));
-  tab.tabIndex = i === index ? 0 : -1;
- });
- momentPanels.forEach((panel, i) => {
-  const wasHidden = panel.hidden;
-  panel.hidden = i !== index;
-  if (i === index && wasHidden && !reducedMotion.matches) {
-   panel.querySelector('img').animate([{opacity: 0, transform: 'scale(1.03)'}, {opacity: 1, transform: 'scale(1)'}], {duration: 450, easing: 'cubic-bezier(.16,1,.3,1)'});
-   panel.querySelector('.moment-copy').animate([{opacity: 0, transform: 'translateY(10px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 320, easing: 'ease-out'});
-  }
- });
-});
 
 /* Navegación móvil */
 function closeNav() {
@@ -130,14 +113,5 @@ document.addEventListener('keydown', event => {
  if (event.key === 'Escape' && !mobileNav.hidden) {closeNav(); navButton.focus();}
 });
 window.matchMedia('(min-width: 1001px)').addEventListener('change', event => {if (event.matches) closeNav();});
-
-/* Sección activa en la navegación */
-const navLinks = [...document.querySelectorAll('.nav-left a, .nav-right > a:not(.reserve)')];
-document.querySelectorAll('#taberna, #momentos').forEach(section => {
- new IntersectionObserver(entries => {
-  if (!entries[0].isIntersecting) return;
-  navLinks.forEach(link => link.toggleAttribute('aria-current', link.hash === '#' + section.id));
- }, {rootMargin: '-20% 0px -55% 0px'}).observe(section);
-});
 
 showMenu();

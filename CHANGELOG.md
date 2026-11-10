@@ -4,7 +4,8 @@
 
 - Portada aligerada: se retiran la franja superior, el ticker de eslóganes y las etiquetas secundarias.
 - «La taberna» y «El espacio» se fusionan. Una etiqueta y una acción por sección.
-- Momentos e Instagram simplificados. Las miniaturas enlazan al perfil, sin ventana ni inserciones.
+- Momentos pasa a ser tres textos breves, sin pestañas, fotos ni botones. Instagram enlaza al perfil, sin ventana ni inserciones.
+- Una sola acción en la portada, textos más cortos y pie reducido a una fila de enlaces.
 - Se retiran el aviso de cookies y el panel de preferencias. Tema claro por defecto y selector en el pie.
 - Se eliminan React y Motion del navegador. Imágenes en WebP con srcset y vídeo solo en pantallas anchas.
 - Hoja de estilos reescrita con estados hover, focus y active en todos los controles.

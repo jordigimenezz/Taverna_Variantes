@@ -20,7 +20,7 @@ Esquinas rectas, separadores finos e iconos Phosphor. Botón relleno para la acc
 
 ## Interacción
 
-La carta usa una ventana nativa con pestañas, cierre con Escape y retorno del foco. Los momentos son pestañas accesibles con teclado; sin JavaScript se muestran los tres. El vídeo solo se descarga en pantallas de 700 px o más, sin ahorro de datos ni movimiento reducido. En móvil se muestra la fotografía.
+La carta usa una ventana nativa con pestañas, cierre con Escape y retorno del foco. Los momentos son tres textos fijos, sin pestañas. El vídeo solo se descarga en pantallas de 700 px o más, sin ahorro de datos ni movimiento reducido. En móvil se muestra la fotografía.
 
 ## Contenido
 
